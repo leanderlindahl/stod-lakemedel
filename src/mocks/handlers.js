@@ -22,9 +22,3 @@ const handlers = [
 ];
 
 export default handlers;
-
-/* 
-{ label: 'Home', link: '/' },
-{ label: 'Krossning', link: '/about' },
- { label: 'Settings', link: '/settings' },
-*/
