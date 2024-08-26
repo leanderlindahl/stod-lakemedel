@@ -1,23 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Avatar, Navbar, Dropdown, Flowbite, CustomFlowbiteTheme } from 'flowbite-react';
 
 const Nav: React.FC = () => {
-  const [menuItems, setMenuItems] = useState<{ label: string; link: string }[]>([]);
-
-  useEffect(() => {
-    const fetchMenuItems = async () => {
-      const response = await fetch('/api/menu', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const data = await response.json();
-      setMenuItems(data?.menuItems);
-    };
-    fetchMenuItems();
-  }, []);
-
   const stodLakemedelTheme: CustomFlowbiteTheme = {
     root: {
       base: 'w-full bg-primary pl-0 pr-4 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4',
@@ -48,7 +32,6 @@ const Nav: React.FC = () => {
             className="mr-3 max-h-[4.5rem] justify-self-start"
             alt="Region Skåne logotyp"
           />
-          {/* <span className="whitespace-nowrap text-xl font-semibold dark:text-white">Region Skåne</span> */}
         </Navbar.Brand>
         <div className="flex md:order-last">
           <Dropdown
