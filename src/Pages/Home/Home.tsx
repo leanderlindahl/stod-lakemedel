@@ -37,7 +37,6 @@ const Home: React.FC = () => {
               size="lg"
               className="w-full mb-2"
               onClick={() => buttonClickHandler(item.link)}
-              // onClick={() => setOpenModal(true)}
               key={index}
             >
               <div className="place-self-start">{item.label}</div>
