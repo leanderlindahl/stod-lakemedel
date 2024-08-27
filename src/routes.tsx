@@ -1,7 +1,7 @@
 import { Router, Switch, Route } from 'outer';
 
-import Home from './Pages/Home';
-import Settings from './Pages/Settings';
+import Home from './components/Home';
+import Settings from './components/Settings';
 import Custom404 from './Pages/Custom404';
 
 export function Routes() {

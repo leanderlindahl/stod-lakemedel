@@ -1,18 +1,16 @@
-import Nav from '../Nav';
 import { Outlet } from 'react-router-dom';
-import './MainLayout.scss';
 import { Banner } from 'flowbite-react';
 import { HiX } from 'react-icons/hi';
 import { MdAnnouncement } from 'react-icons/md';
+import Nav from '../../components/Nav';
 
-const MainLayout: React.FC = () => {
+const Root: React.FC = () => {
   const currentYear = new Date().getFullYear();
   return (
     <div className="flex flex-col h-screen w-screen">
       <header className="p-[1rem] md:p-[2rem] bg-primary">
         <Nav />
       </header>
-      {/* <main className="grid grid-span-12 flex-grow -z-10 p-[1rem] md:p-[2rem] bg-secondary"> */}
       <main className="grid grid-span-12 flex-grow p-[1rem] md:p-[2rem] bg-secondary">
         <Banner className="hidden sm:inline-block text-center pb-0 mb-0">
           <div className="flex w-full justify-between border-b border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700">
@@ -38,4 +36,4 @@ const MainLayout: React.FC = () => {
     </div>
   );
 };
-export default MainLayout;
+export default Root;
