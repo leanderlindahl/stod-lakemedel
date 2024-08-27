@@ -46,7 +46,6 @@ const Home: React.FC = () => {
       ) : (
         <p>no menu itemsz</p>
       )}
-      balle
     </div>
   );
 };
