@@ -6,7 +6,6 @@ import Root from './routes/Root';
 import Custom404 from './components/Custom404';
 import Home from './components/Home';
 import ItemList from './components/ItemList';
-import About from './components/About';
 import Settings from './components/Settings';
 import ItemDetail from './components/ItemDetail/ItemDetail.js';
 
@@ -24,10 +23,6 @@ export const router = createBrowserRouter([
       {
         path: 'item/:itemId',
         element: <ItemDetail />,
-      },
-      {
-        path: 'about',
-        element: <About />,
       },
       {
         path: 'settings',

@@ -19,10 +19,10 @@ describe('Home page component test', () => {
       return HttpResponse.json({
         menuItems: [
           { label: 'Krossning', link: 'krossning' },
-          { label: 'Spädning', link: '/spadning' },
-          { label: 'Byta ut läkemedel', link: '/byta-ut' },
-          { label: 'Ögondropp', link: '/ogondropp' },
-          { label: 'Nedsatt njurfunktion', link: '/nedsatt-njurfunktion' },
+          { label: 'Spädning', link: 'spadning' },
+          { label: 'Byta ut läkemedel', link: 'byta-ut' },
+          { label: 'Ögondropp', link: 'ogondropp' },
+          { label: 'Nedsatt njurfunktion', link: 'nedsatt-njurfunktion' },
         ],
       });
     }),
@@ -75,6 +75,6 @@ describe('Home page component test', () => {
     expect(await screen.findByText(/krossning/i)).toBeVisible();
     fireEvent.click(screen.getByRole('button', { name: /krossning/i }));
     expect(mockedNavigator).toHaveBeenCalledTimes(1);
-    expect(mockedNavigator).toHaveBeenCalledWith('krossning');
+    expect(mockedNavigator).toHaveBeenCalledWith('/item-list/krossning');
   });
 });
