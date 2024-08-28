@@ -23,7 +23,7 @@ const Home: React.FC = () => {
 
   const buttonClickHandler = (link: string) => {
     console.log('Button clicked', link);
-    navigate(link);
+    navigate(`/item-list/${link}`);
   };
 
   return (

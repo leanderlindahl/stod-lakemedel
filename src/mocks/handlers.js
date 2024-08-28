@@ -23,12 +23,12 @@ const handlers = [
   http.get('/api/krossning', () => {
     return HttpResponse.json({
       items: [
-        { label: 'Abakavir', description: 'Filmdragerad tablett - Ziagen', link: '' },
-        { label: 'Abakavir', description: 'Oral lösning - Ziagen', link: '' },
-        { label: 'Abirateronacetat', description: 'Filmdragerad tablett - ZYTIGA', link: '/spadning' },
-        { label: 'Abirateronacetat', description: 'Tablett - Diamox', link: '' },
-        { label: 'Aciklovir', description: 'Tablett - Zovirax', link: '' },
-        { label: 'Allupurinol ', description: 'Tablett - Zyloric', link: '' },
+        { id: '1', label: 'Abakavir', description: 'Filmdragerad tablett - Ziagen', link: '' },
+        { id: '2', label: 'Abakavir', description: 'Oral lösning - Ziagen', link: '' },
+        { id: '3', label: 'Abirateronacetat', description: 'Filmdragerad tablett - ZYTIGA', link: '/spadning' },
+        { id: '4', label: 'Abirateronacetat', description: 'Tablett - Diamox', link: '' },
+        { id: '5', label: 'Aciklovir', description: 'Tablett - Zovirax', link: '' },
+        { id: '6', label: 'Allupurinol ', description: 'Tablett - Zyloric', link: '' },
       ],
     });
   }),

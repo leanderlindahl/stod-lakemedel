@@ -8,17 +8,22 @@ import Home from './components/Home';
 import ItemList from './components/ItemList';
 import About from './components/About';
 import Settings from './components/Settings';
+import ItemDetail from './components/ItemDetail/ItemDetail.js';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root className="flex w-full h-full" />,
+    element: <Root />,
     errorElement: <Custom404 />,
     children: [
       { index: true, element: <Home /> },
       {
-        path: 'krossning',
-        element: <ItemList type={'krossning'} />,
+        path: 'item-list/:type',
+        element: <ItemList />,
+      },
+      {
+        path: 'item/:itemId',
+        element: <ItemDetail />,
       },
       {
         path: 'about',
