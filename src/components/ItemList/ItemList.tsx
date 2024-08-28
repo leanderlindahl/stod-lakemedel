@@ -23,7 +23,6 @@ const ItemList: React.FC = () => {
     fetchItems();
   }, [type]);
 
-  console.log('items', items);
   return (
     <div>
       <ul>
