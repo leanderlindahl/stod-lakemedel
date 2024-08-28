@@ -29,23 +29,21 @@ const Home: React.FC = () => {
   return (
     <div>
       <h1 className="text-2xl font-bold pb-6 text-center">Stöd vid hantering av läkemedel</h1>
-      {menuItems && menuItems.length > 0 ? (
-        menuItems.map((item: { label: string; link: string }, index: number) => (
-          <Button
-            outline
-            color="light"
-            size="lg"
-            className="w-full mb-2"
-            onClick={() => buttonClickHandler(item.link)}
-            key={index}
-          >
-            <div className="place-self-start">{item.label}</div>
-            <HiChevronRight className="ml-2 h-6 w-50 place-self-end" />
-          </Button>
-        ))
-      ) : (
-        <p>no menu itemsz</p>
-      )}
+      {menuItems && menuItems.length > 0
+        ? menuItems.map((item: { label: string; link: string }, index: number) => (
+            <Button
+              outline
+              color="light"
+              size="lg"
+              className="w-full mb-2"
+              onClick={() => buttonClickHandler(item.link)}
+              key={index}
+            >
+              <div className="place-self-start">{item.label}</div>
+              <HiChevronRight className="ml-2 h-6 w-50 place-self-end" />
+            </Button>
+          ))
+        : null}
     </div>
   );
 };

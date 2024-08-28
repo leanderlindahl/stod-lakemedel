@@ -1,8 +1,17 @@
 import { setupServer } from 'msw/node';
 import { http, HttpResponse } from 'msw';
-import { screen, render } from '@testing-library/react';
+import { screen, render, fireEvent } from '@testing-library/react';
 import Home from '../Home';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useNavigate } from 'react-router-dom';
+
+const mockedNavigator = vi.fn();
+vi.mock('react-router-dom', async () => {
+  const mod = await vi.importActual('react-router-dom');
+  return {
+    ...mod,
+    useNavigate: () => mockedNavigator,
+  };
+});
 
 describe('Home page component test', () => {
   const server = setupServer(
@@ -19,12 +28,18 @@ describe('Home page component test', () => {
     }),
   );
 
+  beforeEach(() => {
+    vi.resetAllMocks();
+  });
+  afterEach(() => {});
+
   beforeAll(() => {
     server.listen();
   });
 
   afterAll(() => {
     server.close();
+    vi.resetAllMocks();
   });
 
   it('should render the title', async () => {
@@ -48,5 +63,18 @@ describe('Home page component test', () => {
     expect(await screen.findByText('Krossning')).toBeVisible();
     expect(await screen.findByText('Spädning')).toBeVisible();
     expect(() => screen.getByText('This text is not there')).toThrow();
+  });
+
+  it('should navigate when button is clicked', async () => {
+    render(
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>,
+    );
+
+    expect(await screen.findByText(/krossning/i)).toBeVisible();
+    fireEvent.click(screen.getByRole('button', { name: /krossning/i }));
+    expect(mockedNavigator).toHaveBeenCalledTimes(1);
+    expect(mockedNavigator).toHaveBeenCalledWith('krossning');
   });
 });
