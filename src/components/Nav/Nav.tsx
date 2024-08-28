@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Navbar, Dropdown, Flowbite, CustomFlowbiteTheme } from 'flowbite-react';
+import { Avatar, Navbar, Dropdown, CustomFlowbiteTheme } from 'flowbite-react';
 
 const Nav: React.FC = () => {
   const stodLakemedelTheme: CustomFlowbiteTheme = {

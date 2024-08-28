@@ -12,10 +12,23 @@ const handlers = [
     return HttpResponse.json({
       menuItems: [
         { label: 'Krossning', link: 'krossning' },
-        { label: 'Spädning', link: '/spadning' },
-        { label: 'Byta ut läkemedel', link: '/byta-ut' },
-        { label: 'Ögondropp', link: '/ogondropp' },
-        { label: 'Nedsatt njurfunktion', link: '/nedsatt-njurfunktion' },
+        { label: 'Spädning', link: 'spadning' },
+        { label: 'Byta ut läkemedel', link: 'byta-ut' },
+        { label: 'Ögondropp', link: 'ogondropp' },
+        { label: 'Nedsatt njurfunktion', link: 'nedsatt-njurfunktion' },
+      ],
+    });
+  }),
+
+  http.get('/api/krossning', () => {
+    return HttpResponse.json({
+      items: [
+        { label: 'Abakavir', description: 'Filmdragerad tablett - Ziagen', link: '' },
+        { label: 'Abakavir', description: 'Oral lösning - Ziagen', link: '' },
+        { label: 'Abirateronacetat', description: 'Filmdragerad tablett - ZYTIGA', link: '/spadning' },
+        { label: 'Abirateronacetat', description: 'Tablett - Diamox', link: '' },
+        { label: 'Aciklovir', description: 'Tablett - Zovirax', link: '' },
+        { label: 'Allupurinol ', description: 'Tablett - Zyloric', link: '' },
       ],
     });
   }),
